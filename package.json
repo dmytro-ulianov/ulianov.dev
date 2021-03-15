@@ -38,7 +38,8 @@
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
       "eslint --color --fix --quiet",
-      "prettier --write --config ./.prettierrc"
+      "prettier --write --config ./.prettierrc",
+      "git add"
     ]
   }
 }
