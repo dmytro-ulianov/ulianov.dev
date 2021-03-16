@@ -5,7 +5,8 @@ const WorkSans =
 
 const { css, getCssString, global, styled } = createCss({
   conditions: {
-    md: `@media (min-width: 640px)`,
+    xs: `@media (max-width: 400px)`,
+    md: `@media (min-width: 720px)`,
   },
   theme: {
     colors: { primary: 'teal' },
@@ -19,11 +20,14 @@ const setupGlobalCss = global({
   '*': { boxSizing: 'border-box' },
   'html, body': {
     fontFamily: '$primary',
-    margin: 0,
-    padding: 0,
     fontSize: '12px',
-    when: { md: { fontSize: '16px' } },
+    height: '100vh',
+    margin: 0,
+    minHeight: '-webkit-fill-available',
+    padding: 0,
+    when: { xs: { fontSize: '10px' }, md: { fontSize: '16px' } },
   },
+  '#__next': { height: '100%' },
   '::selection': { background: 'yellow' },
 })
 
