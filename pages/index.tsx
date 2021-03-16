@@ -12,6 +12,11 @@ const Layout = styled('div', {
   height: '100vh',
 })
 
+const Title = styled('h1', {
+  fontSize: '$display',
+  fontWeight: '$black',
+})
+
 export default function Home() {
   return (
     <Layout>
@@ -21,8 +26,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box as="h1" css={{ fontSize: '3rem', fontWeight: '$black' }}>
-        <i>ulianov.dev</i>
+      <Box as="h1" css={{ fontSize: '$display', fontWeight: '$black' }}>
+        <i>Hi, I&apos;m Dmytro Ulianov</i>
       </Box>
     </Layout>
   )
