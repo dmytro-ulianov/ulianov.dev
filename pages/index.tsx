@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+import { Meta } from 'components/meta'
 import { css, theme } from 'stitches.config'
 import { Heading } from 'ui/components/heading'
 import { Text } from 'ui/components/text'
@@ -22,13 +23,21 @@ const layout = css({
   },
 })
 
+const title = 'Dmytro Ulianov | Software Engineer'
+const description = `Hi! I'm Dmytro Ulianov – a software engineer from Ukraine.`
+
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Dmytro Ulianov | Software Engineer</title>
-        <meta name="description" content="Homepage of ulianov.dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <Meta
+          title={title}
+          description={description}
+          image="/static/og-image.jpg"
+          url="https://ulianov.me/"
+        />
       </Head>
 
       <div className={layout()}>
