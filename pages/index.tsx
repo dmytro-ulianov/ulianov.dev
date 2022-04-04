@@ -85,9 +85,6 @@ const anchor = css({
   },
 })
 
-console.log(theme.colors.ukraineBlue)
-console.log(darken(0.2, theme.colors.ukraineBlue.value))
-
 /* TODO: create Stack component */
 const vStack = css({
   display: 'flex',
