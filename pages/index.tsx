@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { darken } from 'polished'
 
 import { Meta } from 'components/meta'
 import { css, theme } from 'stitches.config'
@@ -24,7 +25,7 @@ const layout = css({
 })
 
 const title = 'Dmytro Ulianov | Software Engineer'
-const description = `Hi! I'm Dmytro Ulianov – a software engineer from Ukraine.`
+const description = `Hi! I'm Dmytro Ulianov, a software engineer from Ukraine.`
 
 export default function Home() {
   return (
@@ -68,12 +69,10 @@ export default function Home() {
 const anchor = css({
   alignSelf: 'flex-start',
   background: 'transparent',
-  borderRadius: '8px',
   color: theme.colors.ukraineBlue,
   fontFamily: theme.fonts.grotesk,
   fontSize: theme.fontSizes[18],
   '@bp1': { fontSize: theme.fontSizes[24] },
-  padding: theme.space[8],
   '&:focus': {
     outline: `2px solid ${theme.colors.ukraineBlue}`,
   },
@@ -81,10 +80,15 @@ const anchor = css({
     outline: 'none',
   },
   '&:hover': {
-    backgroundColor: theme.colors.blackA3,
+    color: darken(0.1, theme.colors.ukraineBlue.value),
+    // backgroundColor: theme.colors.blackA3,
   },
 })
 
+console.log(theme.colors.ukraineBlue)
+console.log(darken(0.2, theme.colors.ukraineBlue.value))
+
+/* TODO: create Stack component */
 const vStack = css({
   display: 'flex',
   flexDirection: 'column',
