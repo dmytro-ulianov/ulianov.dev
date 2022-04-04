@@ -1,14 +1,12 @@
 module.exports = {
   extends: [
     'prettier',
-    'plugin:import/errors',
+    'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:import/warnings',
     'plugin:react/recommended',
+    'plugin:@next/next/recommended',
   ],
-
   plugins: ['sonarjs', 'import', 'jsx-a11y', 'react-hooks'],
-
   settings: {
     'import/resolver': {
       node: {
@@ -20,7 +18,6 @@ module.exports = {
       version: 'detect',
     },
   },
-
   rules: {
     /* default overrides -------------------------------- */
     'guard-for-in': 2,
@@ -49,7 +46,6 @@ module.exports = {
     'use-isnan': 2,
     eqeqeq: [2, 'smart'],
     /* default overrides -------------------------------- */
-
     /* import overrides --------------------------------- */
     'import/named': 0, // throws with styled-components/macro
     'import/newline-after-import': [2, { count: 1 }],
@@ -72,7 +68,6 @@ module.exports = {
       },
     ],
     /* import overrides --------------------------------- */
-
     /* react overrides -------------------------------- */
     'react-hooks/exhaustive-deps': 1,
     'react/display-name': 1, // displayName is optional
@@ -91,13 +86,11 @@ module.exports = {
     'react/no-unescaped-entities': 2,
     'react/prop-types': 0, // no prop-types with TS
     /* react overrides -------------------------------- */
-
     /* sonar overrides -------------------------------- */
     'sonarjs/no-duplicate-string': [1, 3],
     'sonarjs/no-identical-functions': 1,
     'sonarjs/no-inverted-boolean-check': 2,
     /* sonar overrides -------------------------------- */
-
     /* next.js overrides ------------------------------ */
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/anchor-is-valid': [
@@ -109,7 +102,6 @@ module.exports = {
       },
     ],
     /* next.js overrides ------------------------------ */
-
     /* react-app rules -------------------------------- */
     // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
     'default-case': 'off',
@@ -145,7 +137,6 @@ module.exports = {
     '@typescript-eslint/no-useless-constructor': 'warn',
     /* react-app rules -------------------------------- */
   },
-
   overrides: [
     {
       files: ['**/*.ts?(x)'],
@@ -169,15 +160,10 @@ module.exports = {
         '@typescript-eslint/unified-signatures': 2,
       },
     },
-
     {
       files: ['**/*.test.ts?(x)'],
       plugins: ['jest', 'testing-library'],
-      extends: [
-        'plugin:jest/recommended',
-        'plugin:testing-library/react',
-        'plugin:testing-library/recommended',
-      ],
+      extends: ['plugin:jest/recommended', 'plugin:testing-library/react'],
       rules: {
         '@typescript-eslint/no-var-requires': 1,
         'jest/expect-expect': 1,
